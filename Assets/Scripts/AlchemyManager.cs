@@ -8,8 +8,8 @@ public class AlchemyManager : MonoBehaviour
     [System.Serializable]
     public class Combination
     {
-        public GameObject inputA;
-        public GameObject inputB;
+        public AlchemyItemDefinition inputA;
+        public AlchemyItemDefinition inputB;
         public GameObject result;
     }
 
@@ -22,24 +22,25 @@ public class AlchemyManager : MonoBehaviour
 
     public void TryCombine(AlchemyItem a, AlchemyItem b)
     {
-        GameObject prefabA = a.itemPrefab;
-        GameObject prefabB = b.itemPrefab;
+        Debug.Log($"Trying to combine {a.definition.itemName} and {b.definition.itemName}");
 
         foreach (var combo in combinations)
         {
-            bool match = (combo.inputA == prefabA && combo.inputB == prefabB) ||
-                         (combo.inputA == prefabB && combo.inputB == prefabA);
+            Debug.Log($"Checking combo: {combo.inputA.itemName} + {combo.inputB.itemName}");
 
-            if (match)
+            if ((combo.inputA == a.definition && combo.inputB == b.definition) ||
+                (combo.inputA == b.definition && combo.inputB == a.definition))
             {
-                Vector3 spawnPos = (a.transform.position + b.transform.position) / 2f;
-                Quaternion spawnRot = Quaternion.Lerp(a.transform.rotation, b.transform.rotation, 0.5f);
-                Instantiate(combo.result, spawnPos, spawnRot);
+                Debug.Log("Combination match found!");
 
+                Vector3 spawnPos = (a.transform.position + b.transform.position) / 2;
                 Destroy(a.gameObject);
                 Destroy(b.gameObject);
+                Instantiate(combo.result, spawnPos, Quaternion.identity);
                 return;
             }
         }
+
+        Debug.Log("No matching combination found.");
     }
 }
