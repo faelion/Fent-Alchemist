@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5086956185589744657}
   - component: {fileID: 8955644962532232037}
   - component: {fileID: -2859643222344007520}
+  - component: {fileID: 3323445602365822270}
   m_Layer: 0
   m_Name: Bottle - Magic 3
-  m_TagString: Untagged
+  m_TagString: RedPotion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,3 +108,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3211831395321836656, guid: eb25c818d1bd7fe4498016171ce70ef5, type: 3}
+--- !u!114 &3323445602365822270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555359688077094446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43b8221cae9d0542b3aaa1fcb847611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 1555359688077094446}
