@@ -24,7 +24,10 @@ public class AlchemyItem : MonoBehaviour
         if (otherItem != null && otherItem != this)
         {
             Debug.Log("Both objects are valid AlchemyItems. Attempting to combine...");
-            AlchemyManager.Instance.TryCombine(this, otherItem);
+            if (GetInstanceID() < otherItem.GetInstanceID())
+            {
+                AlchemyManager.Instance.TryCombine(this, otherItem);
+            }
         }
     }
 }
