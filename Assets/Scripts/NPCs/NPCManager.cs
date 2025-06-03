@@ -11,6 +11,9 @@ public class NPCManager : MonoBehaviour
     public GameObject UICanvas;
     public GameObject UIOrderPrefab;
     public List<GameObject> UIOrders = new();
+    private int currentOrderIndex = 0;
+    public float timeBetweenOrders = 5f;
+    private float currentTime = 0f;
 
     private void Awake()
     {
@@ -20,6 +23,17 @@ public class NPCManager : MonoBehaviour
     void Start()
     {
         CreateNPC();
+    }
+
+    private void Update()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime >= timeBetweenOrders)
+        {
+            currentTime = 0f;
+            if(currentOrderIndex < activeOrders.Count)
+            CreateNPC();
+        }
     }
 
     public bool IsItemRequested(AlchemyItemDefinition item)
@@ -44,6 +58,7 @@ public class NPCManager : MonoBehaviour
         if (order != null)
         {
             order.assignedTo = npc;
+            currentOrderIndex++;
         }
 
         return order;
