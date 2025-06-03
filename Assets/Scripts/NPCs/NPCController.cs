@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,6 +8,7 @@ public class NPCController : MonoBehaviour
 {
     protected Transform[] patrolPoints;
     protected NavMeshAgent agent;
+    protected bool end = false;
 
     protected virtual void Awake()
     {
@@ -29,6 +31,17 @@ public class NPCController : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (end) return;
         DoBehavior();
+    }
+
+    protected void LeaveScene()
+    {
+        end = true;
+        GameObject finish = FindAnyObjectByType<LeaveScene>().gameObject;
+        if (finish != null)
+        {
+            agent.SetDestination(finish.transform.position);
+        }
     }
 }

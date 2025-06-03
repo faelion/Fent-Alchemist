@@ -23,6 +23,7 @@ public class DeliveryZone : MonoBehaviour
             // Dar recompensa, destruir ítem, etc.
             Destroy(other.gameObject);
             Debug.Log($"¡Has entregado {order.requestedItem.name} y completado el pedido! +{order.rewardMoney} monedas.");
+            order.assignedTo.EndOrder();
         }
         else
         {

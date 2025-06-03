@@ -54,9 +54,19 @@ public class NPCManager : MonoBehaviour
         return order;
     }
 
-    private void Update()
+    public void RemoveNPC(NPCController npc)
     {
-
+        if (npcList.Contains(npc.gameObject))
+        {
+            npcList.Remove(npc.gameObject);
+            Debug.Log($"NPC {npc.name} eliminado de la lista.");
+            Destroy(npc.gameObject);
+        }
+        else
+        {
+            Debug.LogWarning($"El NPC {npc.name} no se encuentra en la lista.");
+        }
     }
+
 }
 

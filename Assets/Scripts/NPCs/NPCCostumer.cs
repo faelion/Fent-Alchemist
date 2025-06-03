@@ -41,4 +41,10 @@ public class NPCCostumer : NPCController
         }
     }
 
+    public void EndOrder()
+    {
+        currentOrder = null;
+        LeaveScene();
+    }
+
 }
