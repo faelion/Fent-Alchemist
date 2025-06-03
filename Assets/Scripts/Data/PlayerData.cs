@@ -101,6 +101,7 @@ public class PlayerData : ScriptableObject
             if (File.Exists(SavePath))
             {
                 File.Delete(SavePath);
+                ResetToDefault();
                 Debug.Log("Save file deleted.");
             }
             else

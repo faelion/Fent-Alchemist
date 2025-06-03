@@ -63,6 +63,8 @@ namespace SlimUI.ModernMenu{
         [Tooltip("Highlight Image for when GENERAL Sub-Tab is selected in KEY BINDINGS")]
         public GameObject lineGeneral;
 
+		public PlayerData playerData;
+
         [Header("LOADING SCREEN")]
 		[Tooltip("If this is true, the loaded scene won't load until receiving user input")]
 		public bool waitForInput = true;
@@ -232,6 +234,16 @@ namespace SlimUI.ModernMenu{
 		public void PlaySwoosh(){
 			swooshSound.Play();
 		}
+
+		public void LoadFile()
+		{
+			playerData.LoadData();
+        }
+
+		public void UnLoadFile()
+		{
+			playerData.DeleteSaveFile();
+        }
 
 		// Are You Sure - Quit Panel Pop Up
 		public void AreYouSure(){
