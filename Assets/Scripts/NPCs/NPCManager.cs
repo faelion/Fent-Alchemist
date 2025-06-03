@@ -14,6 +14,7 @@ public class NPCManager : MonoBehaviour
     private int currentOrderIndex = 0;
     public float timeBetweenOrders = 5f;
     private float currentTime = 0f;
+    public PlayerData playerData;
 
     private void Awake()
     {
