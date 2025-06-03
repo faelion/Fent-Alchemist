@@ -12,7 +12,7 @@ public class NPCManager : MonoBehaviour
     public GameObject UIOrderPrefab;
     public List<GameObject> UIOrders = new();
     private int currentOrderIndex = 0;
-    public float timeBetweenOrders = 5f;
+    public float timeBetweenOrders = 15f;
     private float currentTime = 0f;
     public PlayerData playerData;
 

@@ -8,7 +8,7 @@ public class NPCCostumer : NPCController
     private int currentPointIndex = 0;
     public float speed = 3f;
     public NPCOrder currentOrder = null;
-    public float maxTimeToWait = 20f;
+    public float maxTimeToWait = 60f;
     private float currentWaitTime = 0f;
     bool waitingForOrder = false;
 
