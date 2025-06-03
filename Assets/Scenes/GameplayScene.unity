@@ -7576,7 +7576,7 @@ MonoBehaviour:
   UICanvas: {fileID: 44952372}
   UIOrderPrefab: {fileID: 8515821902251353399, guid: 72e1f5592d9a69e4e8c70ae4c60effad, type: 3}
   UIOrders: []
-  timeBetweenOrders: 5
+  timeBetweenOrders: 30
   playerData: {fileID: 11400000, guid: 76ea461b083d1824d91af006bfe0051b, type: 2}
 --- !u!4 &577121303
 Transform:
