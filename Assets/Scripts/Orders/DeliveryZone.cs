@@ -24,6 +24,7 @@ public class DeliveryZone : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log($"¡Has entregado {order.requestedItem.name} y completado el pedido! +{order.rewardMoney} monedas.");
             order.assignedTo.EndOrder();
+            NPCManager.Instance.RemoveUIOrder(order);
         }
         else
         {

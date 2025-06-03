@@ -8,6 +8,9 @@ public class NPCManager : MonoBehaviour
     [SerializeField] private GameObject[] npcPrefabs;
     private List<GameObject> npcList = new();
     public List<NPCOrder> activeOrders = new();
+    public GameObject UICanvas;
+    public GameObject UIOrderPrefab;
+    public List<GameObject> UIOrders = new();
 
     private void Awake()
     {
@@ -16,15 +19,7 @@ public class NPCManager : MonoBehaviour
 
     void Start()
     {
-        PatrolPoints[] patrols = FindObjectsByType<PatrolPoints>(FindObjectsSortMode.None);
-
-        foreach (PatrolPoints patrol in patrols)
-        { 
-            GameObject prefab = npcPrefabs[Random.Range(0, npcPrefabs.Length)];
-            GameObject npc = Instantiate(prefab, new Vector3(12,2,3), Quaternion.identity);
-            npc.GetComponent<NPCController>().SetPatrolPoints(patrol.points);
-            npcList.Add(npc);
-        }
+        CreateNPC();
     }
 
     public bool IsItemRequested(AlchemyItemDefinition item)
@@ -54,6 +49,28 @@ public class NPCManager : MonoBehaviour
         return order;
     }
 
+    public void RemoveUIOrder(NPCOrder order)
+    {
+        if (UIOrders == null || UIOrders.Count == 0)
+        {
+            Debug.LogWarning("No hay órdenes en la lista de UIOrders para eliminar.");
+            return;
+        }
+        else
+        {
+            foreach (GameObject uiOrder in UIOrders)
+            {
+                if (uiOrder.GetComponentInChildren<UIOrders>().currentOrder == order)
+                {
+                    UIOrders.Remove(uiOrder);
+                    Debug.Log($"Orden {order.requestedItem.itemName} eliminada de la UI.");
+                    Destroy(uiOrder);
+                    return;
+                }
+            }
+        }
+    }
+
     public void RemoveNPC(NPCController npc)
     {
         if (npcList.Contains(npc.gameObject))
@@ -66,6 +83,15 @@ public class NPCManager : MonoBehaviour
         {
             Debug.LogWarning($"El NPC {npc.name} no se encuentra en la lista.");
         }
+    }
+
+    private void CreateNPC()
+    {
+        PatrolPoints[] patrols = FindObjectsByType<PatrolPoints>(FindObjectsSortMode.None);
+        GameObject prefab = npcPrefabs[Random.Range(0, npcPrefabs.Length)];
+        GameObject npc = Instantiate(prefab, new Vector3(12, 2, 3), Quaternion.identity);
+        npc.GetComponent<NPCController>().SetPatrolPoints(patrols[0].points);
+        npcList.Add(npc);
     }
 
 }
