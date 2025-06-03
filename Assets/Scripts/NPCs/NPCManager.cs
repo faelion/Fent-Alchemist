@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class NPCManager : MonoBehaviour
 {
+    public static NPCManager Instance;
     [SerializeField] private GameObject[] npcPrefabs;
     private List<GameObject> npcList = new();
+    public List<NPCOrder> activeOrders = new();
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -19,4 +26,37 @@ public class NPCManager : MonoBehaviour
             npcList.Add(npc);
         }
     }
+
+    public bool IsItemRequested(AlchemyItemDefinition item)
+    {
+        return activeOrders.Exists(order => !order.completed && order.requestedItem == item && order.active);
+    }
+
+    public NPCOrder GetOrderForItem(AlchemyItemDefinition item)
+    {
+        return activeOrders.Find(order => !order.completed && order.requestedItem == item);
+    }
+    public void AddOrder(NPCOrder order)
+    {
+        activeOrders.Add(order);
+    }
+
+    public NPCOrder AssignOrderToNPC(NPCCostumer npc)
+    {
+        // Por ejemplo: asignamos la primera misión sin completar
+        var order = activeOrders.Find(o => !o.completed && o.assignedTo == null);
+
+        if (order != null)
+        {
+            order.assignedTo = npc;
+        }
+
+        return order;
+    }
+
+    private void Update()
+    {
+
+    }
 }
+

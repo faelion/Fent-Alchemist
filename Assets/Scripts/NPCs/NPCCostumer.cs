@@ -7,6 +7,12 @@ public class NPCCostumer : NPCController
     // Start is called before the first frame update
     private int currentPointIndex = 0;
     public float speed = 3f;
+    public NPCOrder currentOrder = null;
+
+    void Start()
+    {
+
+    }
     public override void DoBehavior()
     {
         if (patrolPoints == null || patrolPoints.Length == 0) return;
@@ -19,4 +25,20 @@ public class NPCCostumer : NPCController
             currentPointIndex = (currentPointIndex + 1) % patrolPoints.Length;
         }
     }
+
+    public void AddOrder()
+    {
+        currentOrder = NPCManager.Instance.AssignOrderToNPC(this);
+
+        if (currentOrder != null)
+        {
+            Debug.Log($"{name} ha recibido la misión de pedir {currentOrder.requestedItem.itemName}");
+            currentOrder.active = true;
+        }
+        else
+        {
+            Debug.LogWarning($"{name} no ha recibido ninguna misión.");
+        }
+    }
+
 }
