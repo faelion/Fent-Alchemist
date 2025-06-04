@@ -5218,11 +5218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.69
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.97
+      value: 4.45
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18820,15 +18820,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combinations:
-  - inputA: {fileID: 11400000, guid: e4b0622754438384ab119846832dadeb, type: 2}
-    inputB: {fileID: 11400000, guid: 6cf22bf32f6819b4e8f3f5ee79dc9b17, type: 2}
-    result: {fileID: 8967912649285799087, guid: 37e0c897e31f5b8409e0947e1190391c, type: 3}
-  - inputA: {fileID: 11400000, guid: e4b0622754438384ab119846832dadeb, type: 2}
-    inputB: {fileID: 11400000, guid: 6b72fa0185ee80c41955606790b9676c, type: 2}
-    result: {fileID: 8236831020978426972, guid: cd9d587a63c48034c8aa905e298f87fc, type: 3}
-  - inputA: {fileID: 11400000, guid: 6cf22bf32f6819b4e8f3f5ee79dc9b17, type: 2}
-    inputB: {fileID: 11400000, guid: 6b72fa0185ee80c41955606790b9676c, type: 2}
-    result: {fileID: 3056022992941452109, guid: b6c837536e715144ab6cb7ae3de5105e, type: 3}
+  - inputA: {fileID: 11400000, guid: 682e616e558271040810ee93b4f10792, type: 2}
+    inputB: {fileID: 11400000, guid: ddbd6a2dac2c31646aa35c02cc6a62f8, type: 2}
+    result: {fileID: 3128942600146058260, guid: 35ec6debbd0b2c4408f2074cdf2cb201, type: 3}
+  - inputA: {fileID: 11400000, guid: dd4d614f1f651404ea3baf4622f22872, type: 2}
+    inputB: {fileID: 11400000, guid: 3c8641fa16ce7164d88bcdde4871f2d1, type: 2}
+    result: {fileID: 7540142982031393779, guid: e91515216ebf2dc41949a6054175e12b, type: 3}
+  fusionSFX: {fileID: 8300000, guid: e84b2c0e0ac10b8468e857166f0e1bed, type: 3}
 --- !u!4 &1523719458
 Transform:
   m_ObjectHideFlags: 0
@@ -26804,7 +26802,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b75a98894c8fb534b986c27be08f0e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatRecipes: []
+  heatRecipes:
+  - targetIngredient: {fileID: 11400000, guid: 3c8641fa16ce7164d88bcdde4871f2d1, type: 2}
+    result: {fileID: 8324392966759000453, guid: 4334d4d7e66caf143a40c0289bcadca2, type: 3}
+    timeRequired: 7
+  - targetIngredient: {fileID: 11400000, guid: dd4d614f1f651404ea3baf4622f22872, type: 2}
+    result: {fileID: 1555359688077094446, guid: c99e5ae48e74d984c9c877dbde0d2c70, type: 3}
+    timeRequired: 6
+  - targetIngredient: {fileID: 11400000, guid: 3b4725694cad9f7479c38d9ee23ae12e, type: 2}
+    result: {fileID: 2864878882137409896, guid: 32b8989195dd7844ab25910b00b07d75, type: 3}
+    timeRequired: 4
+  roastSFX: {fileID: 8300000, guid: d87d13966ffead842ba4021a73a68510, type: 3}
+  transformSFX: {fileID: 8300000, guid: c2b52e31b6c4f2841a88f8165a122a03, type: 3}
 --- !u!4 &6048968137673613572 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6070765738574092004, guid: dfa767bc04ccf72428873f994d099d25, type: 3}
