@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f02b1a066691d41b9cda8e63b4d842, type: 3}
+  m_Name: RedMushroom
+  m_EditorClassIdentifier: 
+  itemName: RedMushroom
+  prefab: {fileID: 8503534389300518547, guid: f9f0d01f17eed804896d068a9b735652, type: 3}

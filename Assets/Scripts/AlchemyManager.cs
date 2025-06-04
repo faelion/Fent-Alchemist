@@ -15,6 +15,9 @@ public class AlchemyManager : MonoBehaviour
 
     public List<Combination> combinations;
 
+    [Header("Audio")]
+    public AudioClip fusionSFX;
+
     private void Awake()
     {
         Instance = this;
@@ -34,6 +37,10 @@ public class AlchemyManager : MonoBehaviour
                 Debug.Log("Combination match found!");
 
                 Vector3 spawnPos = (a.transform.position + b.transform.position) / 2;
+
+                if (fusionSFX != null)
+                    AudioSource.PlayClipAtPoint(fusionSFX, spawnPos);
+
                 Destroy(a.gameObject);
                 Destroy(b.gameObject);
                 Instantiate(combo.result, spawnPos, Quaternion.identity);
