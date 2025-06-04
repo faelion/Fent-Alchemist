@@ -21584,6 +21584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1523719458}
   - component: {fileID: 1523719457}
+  - component: {fileID: 1523719459}
   m_Layer: 0
   m_Name: AlchemyManager
   m_TagString: Untagged
@@ -21607,6 +21608,10 @@ MonoBehaviour:
   - inputA: {fileID: 11400000, guid: 682e616e558271040810ee93b4f10792, type: 2}
     inputB: {fileID: 11400000, guid: ddbd6a2dac2c31646aa35c02cc6a62f8, type: 2}
     result: {fileID: 3128942600146058260, guid: 35ec6debbd0b2c4408f2074cdf2cb201, type: 3}
+  - inputA: {fileID: 11400000, guid: 3c8641fa16ce7164d88bcdde4871f2d1, type: 2}
+    inputB: {fileID: 11400000, guid: dd4d614f1f651404ea3baf4622f22872, type: 2}
+    result: {fileID: 7540142982031393779, guid: e91515216ebf2dc41949a6054175e12b, type: 3}
+  fusionSFX: {fileID: 8300000, guid: e84b2c0e0ac10b8468e857166f0e1bed, type: 3}
 --- !u!4 &1523719458
 Transform:
   m_ObjectHideFlags: 0
@@ -21622,6 +21627,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1523719459
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523719456}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1525596471
 GameObject:
   m_ObjectHideFlags: 0
@@ -30338,6 +30439,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7346045095380862933, guid: a37aec937a814474d899d654538e6d04, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.288
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4694237028390294925, guid: a37aec937a814474d899d654538e6d04, type: 3}
@@ -30395,6 +30500,8 @@ MonoBehaviour:
   - targetIngredient: {fileID: 11400000, guid: 3a59bd9a40881f045b687c5f2a310a64, type: 2}
     result: {fileID: 6701399929296741752, guid: 0886a3ba85bc2194f833fe469b6b060f, type: 3}
     hitsRequired: 6
+  hitSFX: {fileID: 8300000, guid: 18349a16913c6554f892e7dc58d3ecc7, type: 3}
+  transformSFX: {fileID: 8300000, guid: 2e7161a68525ec6439e19e6e0a6e6561, type: 3}
 --- !u!114 &3636455303649571385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30812,6 +30919,8 @@ MonoBehaviour:
   - targetIngredient: {fileID: 11400000, guid: 3c8641fa16ce7164d88bcdde4871f2d1, type: 2}
     result: {fileID: 8324392966759000453, guid: 4334d4d7e66caf143a40c0289bcadca2, type: 3}
     timeRequired: 5
+  roastSFX: {fileID: 8300000, guid: d87d13966ffead842ba4021a73a68510, type: 3}
+  transformSFX: {fileID: 8300000, guid: c2b52e31b6c4f2841a88f8165a122a03, type: 3}
 --- !u!1001 &5863113014139181829
 PrefabInstance:
   m_ObjectHideFlags: 0

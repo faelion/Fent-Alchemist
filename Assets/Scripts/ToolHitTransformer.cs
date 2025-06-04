@@ -6,6 +6,10 @@ public class ToolHitTransformer : MonoBehaviour
     [Tooltip("Configure each AlchemyIngredient, its result, and how many hits are needed.")]
     public List<HitCombination> hitCombinations;
 
+    [Header("Audio")]
+    public AudioClip hitSFX;
+    public AudioClip transformSFX;
+
     private void OnTriggerEnter(Collider other)
     {
         AlchemyItem item = other.GetComponent<AlchemyItem>();
@@ -19,7 +23,7 @@ public class ToolHitTransformer : MonoBehaviour
         if (tracker == null)
         {
             tracker = item.gameObject.AddComponent<HitTracker>();
-            tracker.Initialize(combo.hitsRequired, combo.result);
+            tracker.Initialize(combo.hitsRequired, combo.result, hitSFX, transformSFX);
         }
 
         tracker.RegisterHit();
