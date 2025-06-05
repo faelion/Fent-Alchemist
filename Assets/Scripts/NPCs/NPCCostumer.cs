@@ -56,9 +56,9 @@ public class NPCCostumer : NPCController
 
     public void EndOrder()
     {
-        if(currentOrder != null && !currentOrder.completed)
+        if (currentOrder != null && !currentOrder.completed)
         {
-            NPCManager.Instance.playerData.Currency -= currentOrder.rewardMoney;
+            //NPCManager.Instance.playerData.Currency -= currentOrder.rewardMoney;
             NPCManager.Instance.RemoveUIOrder(currentOrder);
         }
         LeaveScene();

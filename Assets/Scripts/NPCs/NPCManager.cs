@@ -105,7 +105,7 @@ public class NPCManager : MonoBehaviour
     {
         PatrolPoints[] patrols = FindObjectsByType<PatrolPoints>(FindObjectsSortMode.None);
         GameObject prefab = npcPrefabs[Random.Range(0, npcPrefabs.Length)];
-        GameObject npc = Instantiate(prefab, new Vector3(12, 2, 3), Quaternion.identity);
+        GameObject npc = Instantiate(prefab, new Vector3(0, 2, 3), Quaternion.identity);
         npc.GetComponent<NPCController>().SetPatrolPoints(patrols[0].points);
         npcList.Add(npc);
     }

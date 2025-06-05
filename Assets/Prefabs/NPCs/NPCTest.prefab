@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8022330467505227436}
   - component: {fileID: 4498231730370475415}
   - component: {fileID: 6340431496641441620}
-  - component: {fileID: -6079589268135611766}
+  - component: {fileID: 8358358808337930967}
+  - component: {fileID: 1335380461295539912}
   m_Layer: 0
   m_Name: NPCTest
   m_TagString: Untagged
@@ -128,22 +129,53 @@ MonoBehaviour:
     completed: 0
     assignedTo: {fileID: 0}
   maxTimeToWait: 20
---- !u!114 &-6079589268135611766
-MonoBehaviour:
+--- !u!23 &8358358808337930967
+MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7538537604108224855}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf27db43bfceb244b87204bea10dc39a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  variants:
-  - {fileID: 6824628229319597098, guid: 40199bb31a4f69e43acb58892f18410c, type: 3}
-  - {fileID: 3172433672509449051, guid: e00c7580074464a44afb462fadd64e24, type: 3}
-  - {fileID: 36204671562741804, guid: a1bd06a1cf3b6ad48aeb57ec4a08ffdc, type: 3}
-  - {fileID: 2160731257629634712, guid: 6788c3037e6c52b42845bb7b8080aa3c, type: 3}
-  - {fileID: 4886713925724604906, guid: d4f2821959318fb478aec23957ef4662, type: 3}
-  yOffset: -0.51
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dcac969f335985b47a7dd104e05496d9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1335380461295539912
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7538537604108224855}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
