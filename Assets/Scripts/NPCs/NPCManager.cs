@@ -35,6 +35,14 @@ public class NPCManager : MonoBehaviour
             if(currentOrderIndex < activeOrders.Count)
             CreateNPC();
         }
+
+        foreach (GameObject uiOrder in UIOrders)
+        {
+            if (uiOrder != null)
+            {
+                uiOrder.GetComponentInChildren<UIOrders>().UpdateOrderText();
+            }
+        }
     }
 
     public bool IsItemRequested(AlchemyItemDefinition item)

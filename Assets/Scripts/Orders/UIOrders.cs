@@ -16,11 +16,13 @@ public class UIOrders : MonoBehaviour
 
     public void UpdateOrderText()
     {
-        string text = "Active Orders:\n";
+        string text = "Active Order:\n";
         if (currentOrder != null)
         {
             text += $"{currentOrder.requestedItem.itemName} - Assigned to: {currentOrder.assignedTo?.name ?? "None"}\n";
-            text += $"Reward: {currentOrder.rewardMoney} coins\n\n";
+            text += $"Reward: {currentOrder.rewardMoney} coins\n";
+            currentOrder.timeToComplete -= Time.deltaTime;
+            text += $"Time to complete: {(int)currentOrder.timeToComplete} seconds\n";
         }
 
         orderText.text = text;

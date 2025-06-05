@@ -8,7 +8,7 @@ public class NPCCostumer : NPCController
     private int currentPointIndex = 0;
     public float speed = 3f;
     public NPCOrder currentOrder = null;
-    public float maxTimeToWait = 60f;
+    private float maxTimeToWait = 60f;
     private float currentWaitTime = 0f;
     bool waitingForOrder = false;
 
@@ -47,6 +47,7 @@ public class NPCCostumer : NPCController
             Debug.Log($"{name} ha recibido la misión de pedir {currentOrder.requestedItem.itemName}");
             currentOrder.active = true;
             waitingForOrder = true;
+            maxTimeToWait = currentOrder.timeToComplete;
         }
         else
         {
@@ -58,7 +59,7 @@ public class NPCCostumer : NPCController
     {
         if (currentOrder != null && !currentOrder.completed)
         {
-            //NPCManager.Instance.playerData.Currency -= currentOrder.rewardMoney;
+            NPCManager.Instance.playerData.Currency -= currentOrder.rewardMoney;
             NPCManager.Instance.RemoveUIOrder(currentOrder);
         }
         LeaveScene();

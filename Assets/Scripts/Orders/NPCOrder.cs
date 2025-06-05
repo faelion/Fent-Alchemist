@@ -10,4 +10,5 @@ public class NPCOrder
     public bool active;
     public bool completed;
     public NPCCostumer assignedTo;
+    public float timeToComplete;
 }
