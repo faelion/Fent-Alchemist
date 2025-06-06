@@ -16,7 +16,7 @@ public class UICurrency : MonoBehaviour
     {
         if (NPCManager.Instance != null && NPCManager.Instance.playerData != null)
         {
-            orderText.text = $"Coins: {NPCManager.Instance.playerData.Currency}";
+            orderText.text = $"Coins:\n {NPCManager.Instance.playerData.Currency}";
         }
         else
         {
