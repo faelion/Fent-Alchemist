@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveFileName: playerdata
   useEncryption: 0
-  currency: 0
+  currency: -30
   currentMission: 1
