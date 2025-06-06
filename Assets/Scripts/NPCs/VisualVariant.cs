@@ -14,7 +14,8 @@ public class VisualVariant : MonoBehaviour
             Debug.LogWarning("No variants assigned to VisualVariant.");
             return;
         }
-
-        GameObject.Instantiate(variants[Random.Range(0, variants.Count)], transform.position + new Vector3(0f, yOffset, 0f), transform.rotation, transform);
+        int randomIndex = Random.Range(0, variants.Count);
+        GameObject pj = GameObject.Instantiate(variants[randomIndex], transform.position + new Vector3(0f, yOffset, 0f), transform.rotation, transform);
+        gameObject.name = variants[randomIndex].name;
     }
 }
