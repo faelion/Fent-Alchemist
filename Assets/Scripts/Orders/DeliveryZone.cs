@@ -9,7 +9,7 @@ public class DeliveryZone : MonoBehaviour
         AlchemyItem item = other.GetComponent<AlchemyItem>();
         if (item == null)
         {
-            Debug.Log($"El objeto {other.gameObject.name} no es un AlchemyItem.");
+           // Debug.Log($"El objeto {other.gameObject.name} no es un AlchemyItem.");
             return;
         }
 
@@ -22,14 +22,14 @@ public class DeliveryZone : MonoBehaviour
 
             // Dar recompensa, destruir ítem, etc.
             Destroy(other.gameObject);
-            Debug.Log($"¡Has entregado {order.requestedItem.name} y completado el pedido! +{order.rewardMoney} monedas.");
+           // Debug.Log($"¡Has entregado {order.requestedItem.name} y completado el pedido! +{order.rewardMoney} monedas.");
             NPCManager.Instance.playerData.Currency += order.rewardMoney;
             order.assignedTo.EndOrder();
             NPCManager.Instance.RemoveUIOrder(order);
         }
         else
         {
-            Debug.Log($"El ítem {other.gameObject.name} no está en ningún pedido activo.");
+           // Debug.Log($"El ítem {other.gameObject.name} no está en ningún pedido activo.");
         }
     }
 }

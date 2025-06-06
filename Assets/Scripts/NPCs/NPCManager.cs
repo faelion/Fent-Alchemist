@@ -77,7 +77,7 @@ public class NPCManager : MonoBehaviour
     {
         if (UIOrders == null || UIOrders.Count == 0)
         {
-            Debug.LogWarning("No hay órdenes en la lista de UIOrders para eliminar.");
+           // Debug.LogWarning("No hay órdenes en la lista de UIOrders para eliminar.");
             return;
         }
         else
@@ -87,7 +87,7 @@ public class NPCManager : MonoBehaviour
                 if (uiOrder.GetComponentInChildren<UIOrders>().currentOrder == order)
                 {
                     UIOrders.Remove(uiOrder);
-                    Debug.Log($"Orden {order.requestedItem.itemName} eliminada de la UI.");
+                 //   Debug.Log($"Orden {order.requestedItem.itemName} eliminada de la UI.");
                     Destroy(uiOrder);
                     return;
                 }
@@ -100,12 +100,12 @@ public class NPCManager : MonoBehaviour
         if (npcList.Contains(npc.gameObject))
         {
             npcList.Remove(npc.gameObject);
-            Debug.Log($"NPC {npc.name} eliminado de la lista.");
+         //   Debug.Log($"NPC {npc.name} eliminado de la lista.");
             Destroy(npc.gameObject);
         }
         else
         {
-            Debug.LogWarning($"El NPC {npc.name} no se encuentra en la lista.");
+         //   Debug.LogWarning($"El NPC {npc.name} no se encuentra en la lista.");
         }
     }
 
